@@ -30,7 +30,7 @@ class PhoneController extends Controller
         $phone->user = auth()->user()->id;
         $phone->save();
 
-        return redirect("/home");
+        return redirect("/home")->with('success', 'Your Phone Number Has Been Added Successfully');
     }
 
     public function destroy($id){

@@ -11,8 +11,7 @@ class UsersController extends Controller
     public function add($id)
     {
         User::find(auth()->user()->id)->contacts()->syncWithoutDetaching([$id]);
-        session()->flash('success', 'Your Phone Number Has Been Added Successfully');
-        return back()->with('success', 'Your Phone Number Has Been Added Successfully');
+        return redirect()->back();
     }
 
     public function destroy($id)
